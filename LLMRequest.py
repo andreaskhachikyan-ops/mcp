@@ -1,7 +1,7 @@
 from groq import Groq
+from config import groq_api_key
 
-api_key = "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"
-client = Groq(api_key=api_key)
+client = Groq(api_key=groq_api_key)
 
 
 def request_to_lmm(content, query):
