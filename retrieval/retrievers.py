@@ -3,6 +3,7 @@ from retrieval.base import BaseRetriever, RetrievalResult
 from typing import List
 import arxiv
 import wikipedia
+from config import tavily_api_key
 
 
 class WebRetriever(BaseRetriever):
@@ -32,13 +33,12 @@ class WebRetriever(BaseRetriever):
 
 
 class TavilyRetriever(BaseRetriever):
-    api_key = "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"
     url = "https://api.tavily.com/search"
 
     @staticmethod
     async def retrieve(query: str) -> List[RetrievalResult]:
         payload = {
-            "api_key": TavilyRetriever.api_key,
+            "api_key": tavily_api_key,
             "query": query,
             "search_depth": "basic",
             "include_answer": False
