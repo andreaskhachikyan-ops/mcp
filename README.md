@@ -197,27 +197,11 @@ flake8 .
 - Maximum token limit set to 80 in LLM requests (configurable)
 
 ## Future Enhancements
+Lightweight Local Model for Query Analysis
 
-- [ ] Add caching layer for frequently asked questions
-- [ ] Implement retry logic for failed retrievals
-- [ ] Add more retrieval sources (news APIs, databases)
-- [ ] Enhance error handling and logging
-- [ ] Add authentication and rate limiting
-- [ ] Implement conversation history tracking
-- [ ] Add streaming responses
+Currently, the service uses the same high-capability Groq model for both:
 
-## Security Notes
+Query analysis/routing
+Final response generation
 
-⚠️ **Important**: The current implementation has hardcoded API keys in the source code. Before deploying to production:
-
-1. Move all API keys to environment variables
-2. Add `.env` to `.gitignore`
-3. Use secrets management (AWS Secrets Manager, HashiCorp Vault, etc.)
-4. Implement proper authentication for the API endpoints
-
-
-[Add your contact information or link to issues page]
-
----
-
-**Note**: This is a proof-of-concept implementation. Additional security, error handling, and production-ready features should be added before deploying to a production environment.
+A more efficient architecture would separate these responsibilities by introducing a lightweight local model for the analysis stage.
