@@ -215,15 +215,6 @@ flake8 .
 3. Use secrets management (AWS Secrets Manager, HashiCorp Vault, etc.)
 4. Implement proper authentication for the API endpoints
 
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## License
-
-[Add your license here]
-
-## Contact
 
 [Add your contact information or link to issues page]
 
